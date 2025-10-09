@@ -1,0 +1,18 @@
+#row echelon form of a matrix
+import numpy as np
+import sympy
+
+def get_matrix():
+    rows=int(input("Enter number of rows:"))
+    cols=int(input("Enter number of cols:"))
+    elem=input("Enter elements separated by spaces").split()
+    matrix=np.array(elem,dtype=float).reshape(rows,cols)
+    return matrix
+
+M = get_matrix()
+sym_matrix = sympy.Matrix(M)
+ref=sym_matrix.echelon_form()
+rank=sym_matrix.rank()
+
+print("REF",ref)
+print("rank",rank)
