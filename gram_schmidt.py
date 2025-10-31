@@ -1,6 +1,11 @@
 import numpy as np
 
 def gram_schmidt(V):
+    # Validate matrix dimensions (all vectors must have same length)
+    m = len(V[0])
+    if any(len(row) != m for row in V):
+    raise ValueError("All rows must have the same number of columns")
+    
     U = []
     for v in V:
         for u in U:
