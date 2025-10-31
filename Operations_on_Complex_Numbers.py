@@ -1,8 +1,4 @@
 #complex numbers operations
-
-import cmath
-import math
-
 def add(x,y,a,b):
     print("Addition: ",complex(x,y)+complex(a,b))
 def sub(x,y,a,b):
@@ -15,12 +11,6 @@ def multiply_conjugate(x,y):
     complex_number = complex(x,y)
     conj = complex_number.conjugate()
     print("Multiplication with conjugate: ",complex_number*conj)
-def show_properties(z):
-    #Display magnitude and angle in degrees
-    magnitude = abs(z)
-    angle = math.degrees(cmath.phase(z))
-    print("Magnitude:", magnitude)
-    print("Argument (Angle):", angle)
 
 while True:
     print("1.Add two complex numbers")
