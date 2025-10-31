@@ -12,6 +12,9 @@ def gaussian_elimination(A, b):
             b[j] -= ratio * b[i]
     return np.column_stack((A, b))
 
-A = np.array([[2, 1, -1], [-3, -1, 2], [-2, 1, 2]], float)
-b = np.array([8, -11, -3], float)
-print("Row Echelon Form:\n", gaussian_elimination(A, b))
+n = int(input("Enter number of equations: "))
+print("Enter coefficients row-wise:")
+A = np.array([list(map(float, input().split())) for _ in range(n)])
+b = np.array(list(map(float, input("Enter constants: ").split())))
+
+print("\nRow Echelon Form using gaussian elimination:", gaussian_elimination(A, b))
