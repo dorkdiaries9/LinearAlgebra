@@ -12,7 +12,14 @@ def get_matrix():
 M = get_matrix()
 sym_matrix = sympy.Matrix(M)
 ref=sym_matrix.echelon_form()
+rref, pivots = sym_matrix.rref() 
 rank=sym_matrix.rank()
 
-print("REF",ref)
-print("rank",rank)
+print("Reduced Row Echelon Form (RREF):")  # Display RREF
+sympy.pprint(rref)
+
+print("Pivot Columns: ", pivots)
+
+
+print("Reduced Echelon form (REF):",ref)
+print("rank of Matrix : ",rank)
