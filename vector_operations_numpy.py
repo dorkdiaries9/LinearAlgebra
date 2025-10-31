@@ -7,6 +7,15 @@ def input_vector():
         val = int(input("Enter value:"))
         vec.append(val)
     return np.array(vec)
+    
+def projection(u, v):
+    v_mag_sq = np.dot(v, v)
+    if v_mag_sq == 0:
+        print(" Cannot project onto zero vector.")
+    else:
+        proj = (np.dot(u, v) / v_mag_sq) * v
+        print(f"Projection of u on v = {proj}")
+
 
 print("Enter Vector u :")
 u = input_vector()
@@ -20,6 +29,7 @@ if u.shape != v.shape:
 while True:
     print("1.Compute au + bv")
     print("2.Compute dot product")
+    print("3.Projection of u on v")
     print("3.exit")
 
     ch = int(input(" Enter your choice : "))
@@ -31,6 +41,8 @@ while True:
     elif ch == 2:
         dot = np.dot(u,v)
         print("Dot product",dot)
+    elif ch == 3:
+        projection(u,v)
     else:
         print('invalid choice!')
     
